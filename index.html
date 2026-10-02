@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инструкция: Регистрация на GitHub</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #0d1117;
+            color: #c9d1d9;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #161b22;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #58a6ff;
+        }
+
+        .nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #c9d1d9;
+            font-weight: 500;
+        }
+
+        .nav a:hover {
+            color: #58a6ff;
+        }
+
+        .section {
+            padding: 2.5rem 1.5rem;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h1, h2 {
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .cards-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 1rem;
+        }
+
+        .card {
+            flex: 1;
+            padding: 1.2rem;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            background-color: #161b22;
+        }
+
+        .card h3 {
+            color: #58a6ff;
+            margin-bottom: 0.5rem;
+        }
+
+        .card a {
+            color: #58a6ff;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            background-color: #238636;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #2ea043;
+        }
+
+        .status-text {
+            margin-top: 1rem;
+            font-weight: bold;
+            color: #3fb950;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #161b22;
+            border-top: 1px solid #30363d;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+
+        /* Адаптивность для мобильных устройств */
+        @media (max-width: 650px) {
+            .header {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .cards-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">GitHub Guide</div>
+        <nav class="nav">
+            <a href="#about">О сервисе</a>
+            <a href="#steps">Шаги регистрации</a>
+            <a href="#interactive">Проверка знаний</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about" class="section">
+            <h1>Как зарегистрироваться на GitHub</h1>
+            <p>GitHub — это крупнейшая платформа для хостинга IT-проектов и совместной разработки. Данный гид поможет вам быстро создать аккаунт.</p>
+        </section>
+
+        <section id="steps" class="section">
+            <h2>Шаги для создания аккаунта</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <h3>Шаг 1</h3>
+                    <p>Перейдите на сайт <a href="https://github.com" target="_blank">github.com</a> и нажмите кнопку <strong>Sign up</strong>.</p>
+                </div>
+                <div class="card">
+                    <h3>Шаг 2</h3>
+                    <p>Введите ваш email, создайте надежный пароль и придумайте уникальный <strong>username</strong>.</p>
+                </div>
+                <div class="card">
+                    <h3>Шаг 3</h3>
+                    <p>Пройдите простую капчу и подтвердите вашу электронную почту с помощью кода.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="interactive" class="section">
+            <h2>Интерактивная проверка готовности</h2>
+            <p>Нажмите на кнопку ниже, чтобы проверить, всё ли у вас готово для регистрации:</p>
+            <button id="check-btn" class="btn">Проверить чек-лист</button>
+            <p id="status-message" class="status-text"></p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Учебное руководство по GitHub. Все права защищены.</p>
+    </footer>
+
+    <script>
+        const checkBtn = document.getElementById('check-btn');
+        const statusMessage = document.getElementById('status-message');
+
+        checkBtn.addEventListener('click', () => {
+            statusMessage.textContent = '✓ Электронная почта готова! Теперь вы можете переходить на github.com и регистрироваться.';
+            checkBtn.style.backgroundColor = '#1f6feb';
+            checkBtn.textContent = 'Проверено';
+        });
+    </script>
+</body>
+</html>
